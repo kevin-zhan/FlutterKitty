@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlutterKitty',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness:Brightness.dark,
       ),
       home: MyHomePage(title: 'FlutterKitty'),
     );
@@ -61,10 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildRow(KittyModel kitty) {
-    return Card(
-      child: Image.network(
-        kitty.url,
-        fit: BoxFit.fitWidth,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
+      child: GestureDetector(
+        onTap: () {
+          print(kitty.url);
+        },
+        child: Image.network(
+          kitty.url,
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }
