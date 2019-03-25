@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlutterKitty',
       theme: ThemeData(
-        brightness:Brightness.dark,
+        brightness: Brightness.dark,
       ),
       home: MyHomePage(title: 'FlutterKitty'),
     );
@@ -36,28 +36,59 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: StreamBuilder<List<KittyModel>>(
-            stream: kittyListViewModel.outStoryList,
-            builder: (context, snapshot) {
-              List kitties = snapshot.data;
-              return RefreshIndicator(
-                onRefresh: () {
-                  return kittyListViewModel.refreshKittyList();
-                },
-                child: ListView.builder(
-                    itemCount: (kitties?.length ?? 0) + 1,
-                    itemBuilder: (context, index) {
-                      if (index >= (kitties?.length ?? 0)) {
-                        kittyListViewModel.loadNextPage();
-                        return _buildLoadMoreView();
-                      }
-                      return _buildRow(kitties[index]);
-                    }),
-              );
-            }));
+      body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 400.0,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: true,
+                    title: Text("Flutter Kitty",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24.0,
+                        )),
+                    background: Stack(
+                      fit: StackFit.expand,
+                      children: <Widget>[
+                        Image.asset(
+                          "assets/default_holder.jpeg",
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 370),
+                          child: Container(
+                            color: Color.fromARGB(101, 0, 0, 0),
+                          ),
+                        ),
+                      ],
+                    )),
+              ),
+            ];
+          },
+          body: StreamBuilder<List<KittyModel>>(
+              stream: kittyListViewModel.outStoryList,
+              builder: (context, snapshot) {
+                List kitties = snapshot.data;
+                return RefreshIndicator(
+                  onRefresh: () {
+                    return kittyListViewModel.refreshKittyList();
+                  },
+                  child: ListView.builder(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      itemCount: (kitties?.length ?? 0) + 1,
+                      itemBuilder: (context, index) {
+                        if (index >= (kitties?.length ?? 0)) {
+                          kittyListViewModel.loadNextPage();
+                          return _buildLoadMoreView();
+                        }
+                        return _buildRow(kitties[index]);
+                      }),
+                );
+              })),
+    );
   }
 
   Widget _buildRow(KittyModel kitty) {
