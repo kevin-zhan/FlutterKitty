@@ -1,3 +1,4 @@
+import 'package:daily_zhihu/customize_widget.dart';
 import 'package:flutter/material.dart';
 import 'model.dart';
 import 'view_model.dart';
@@ -57,11 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           "assets/default_holder.jpeg",
                           fit: BoxFit.cover,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 370),
-                          child: Container(
-                            color: Color.fromARGB(101, 0, 0, 0),
-                          ),
+                        Container(
+                          color: Color.fromARGB(40, 0, 0, 0),
                         ),
                       ],
                     )),
@@ -72,41 +70,23 @@ class _MyHomePageState extends State<MyHomePage> {
               stream: kittyListViewModel.outStoryList,
               builder: (context, snapshot) {
                 List kitties = snapshot.data;
-                return RefreshIndicator(
-                  onRefresh: () {
-                    return kittyListViewModel.refreshKittyList();
-                  },
-                  child: ListView.builder(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      itemCount: (kitties?.length ?? 0) + 1,
-                      itemBuilder: (context, index) {
-                        if (index >= (kitties?.length ?? 0)) {
+                return ListView.builder(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    itemCount: (kitties?.length ?? 0) + 2,
+                    itemBuilder: (context, index) {
+                      if (index == 0) {
+                        return CustomizeWidget.buildCategoryRow(context);
+                      }
+
+                      if (kitties == null || index > kitties.length) {
+                        kittyListViewModel.loadNextPage();
+                        return CustomizeWidget.buildLoadMoreView(() {
                           kittyListViewModel.loadNextPage();
-                          return _buildLoadMoreView();
-                        }
-                        return _buildRow(kitties[index]);
-                      }),
-                );
+                        });
+                      }
+                      return CustomizeWidget.buildRow(kitties[index - 1]);
+                    });
               })),
     );
-  }
-
-  Widget _buildRow(KittyModel kitty) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 2),
-      child: GestureDetector(
-        onTap: () {
-          print(kitty.url);
-        },
-        child: Image.network(
-          kitty.url,
-          fit: BoxFit.fitWidth,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLoadMoreView() {
-    return Center(child: Text("加载中..."));
   }
 }
