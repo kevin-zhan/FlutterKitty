@@ -23,7 +23,7 @@ class CustomizeWidget {
     return GestureDetector(
         onTap: tapCallback, child: Center(child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Text("加载中..."),
+          child: Text("Tap to load more..."),
         )));
   }
 
@@ -32,7 +32,7 @@ class CustomizeWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(10, 8.0, 0, 8),
           child: Text(
             "Category",
             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
@@ -41,7 +41,7 @@ class CustomizeWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.fromLTRB(10, 2.0, 10, 2),
             child: Row(
               children: <Widget>[
                 CustomizeWidget.buildCategoryWidget(
@@ -75,21 +75,51 @@ class CustomizeWidget {
                               )));
                 }),
                 CustomizeWidget.buildCategoryWidget(
+                    "Space", "assets/space_bg.jpg", () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => CategoryKittyPage(
+                                title: "Space",
+                                category: 2,
+                              )));
+                }),
+                CustomizeWidget.buildCategoryWidget(
                     "Sinks", "assets/sinks_bg.jpg", () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) => CategoryKittyPage(
-                                title: "Sinks",
-                                category: 14,
-                              )));
+                            title: "Sinks",
+                            category: 14,
+                          )));
+                }),
+                CustomizeWidget.buildCategoryWidget(
+                    "Sunglasses", "assets/sunglasses_bg.jpg", () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => CategoryKittyPage(
+                            title: "Sunglasses",
+                            category: 4,
+                          )));
+                }),
+                CustomizeWidget.buildCategoryWidget(
+                    "Ties", "assets/tie_bg.jpg", () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => CategoryKittyPage(
+                            title: "Ties",
+                            category: 7,
+                          )));
                 }),
               ],
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(10, 8.0, 0, 8),
           child: Text("Popular",
               style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500)),
         )
@@ -105,7 +135,7 @@ class CustomizeWidget {
         color: Colors.grey,
         clipBehavior: Clip.antiAlias,
         child: Container(
-          height: 130,
+          height: 140,
           width: 300,
           child: Stack(
             fit: StackFit.expand,
