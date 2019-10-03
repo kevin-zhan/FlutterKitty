@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/LICENSE</key>
 		<data>
-		XEpqHoKq2ZnV4IOMWVnCp6gj5Oc=
+		42goCbeEN7BhvcNkh763NqargB8=
 		</data>
 		<key>flutter_assets/assets/2.0x/box_bg.jpg</key>
 		<data>
@@ -122,11 +122,11 @@
 		</data>
 		<key>flutter_assets/isolate_snapshot_data</key>
 		<data>
-		1kZTJEmnB5tLOvK76MC+YOkrUHE=
+		In2gMWzUqtkqL6Le4F8fJJireiw=
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		1KhBS54mEYVJejjw/7JvvkvfWYw=
+		b8oBjYvWf8TzOjgeZZ/phKzHYGE=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
-		Dna2BxcG22HN2x7XHM+DJIIqXcM=
+		lAGZPMuTcH0pXLKVckN2IRjedl8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -165,11 +165,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XEpqHoKq2ZnV4IOMWVnCp6gj5Oc=
+			42goCbeEN7BhvcNkh763NqargB8=
 			</data>
 			<key>hash2</key>
 			<data>
-			W/cE6xwgA038xTEq/QABYa6MlbTqYyxxaLvmhv3YXK4=
+			IEiKHbRy5O/rSxpSnUlTIzfcRvXRBnE3tEUY0QlKwYs=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/2.0x/box_bg.jpg</key>
@@ -451,22 +451,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1kZTJEmnB5tLOvK76MC+YOkrUHE=
+			In2gMWzUqtkqL6Le4F8fJJireiw=
 			</data>
 			<key>hash2</key>
 			<data>
-			CJhflXpti398hm8yS/gDK1n5KVzSnOtnxxF9E/Hd80E=
+			mLyuGdlvgbK0vqlNm8PZMmcQTNneqFURzL6z1vbKDnw=
 			</data>
 		</dict>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1KhBS54mEYVJejjw/7JvvkvfWYw=
+			b8oBjYvWf8TzOjgeZZ/phKzHYGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			0gA006r6j6W2pVuVIMdJUqNUyIx4VDHcWlibNyI5s3Q=
+			jO9S+hBAVubwOp5dpEi4VhLG1mcQO6LiRIiyh4zQjUo=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -484,11 +484,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Dna2BxcG22HN2x7XHM+DJIIqXcM=
+			lAGZPMuTcH0pXLKVckN2IRjedl8=
 			</data>
 			<key>hash2</key>
 			<data>
-			wI3Xcb7E9SgBNZDNDgFiAuCXAJ9CgxxPHlb33vmxSSU=
+			iYDqXSF/H++ejaXaabhrDoYRXg2tSYJF0bsG3UagwVU=
 			</data>
 		</dict>
 	</dict>

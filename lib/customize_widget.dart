@@ -1,4 +1,4 @@
-import 'package:daily_zhihu/model.dart';
+import 'package:flutter_kitty/model.dart';
 import 'package:flutter/material.dart';
 import 'pages.dart';
 

@@ -1,4 +1,4 @@
-package com.example.dailyzhihu;
+package com.example.flutter_kitty;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

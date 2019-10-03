@@ -1,4 +1,4 @@
-import 'package:daily_zhihu/customize_widget.dart';
+import 'package:flutter_kitty/customize_widget.dart';
 import 'package:flutter/material.dart';
 import 'model.dart';
 import 'view_model.dart';
